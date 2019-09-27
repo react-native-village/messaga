@@ -1,0 +1,19 @@
+{
+    "test": {
+        "awscloudformation": {
+            "AuthRoleName": "messaga-test-20190926202751-authRole",
+            "UnauthRoleArn": "arn:aws:iam::123118798050:role/messaga-test-20190926202751-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::123118798050:role/messaga-test-20190926202751-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "messaga-test-20190926202751-deployment",
+            "UnauthRoleName": "messaga-test-20190926202751-unauthRole",
+            "StackName": "messaga-test-20190926202751",
+            "StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/messaga-test-20190926202751/f799c190-e082-11e9-b49e-069eaf5ad9a0"
+        },
+        "categories": {
+            "auth": {
+                "messagad91773cf": {}
+            }
+        }
+    }
+}

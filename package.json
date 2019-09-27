@@ -1,0 +1,59 @@
+{
+  "name": "messaga",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "ios": "react-native run-ios --simulator='iPhone SE' && npm run lint-watch",
+    "android": "react-native run-android && npm run lint-watch",
+    "lint": "esw src/**",
+    "lint-watch": "esw -w --changed src/**"
+  },
+  "precommit": "lint",
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "semi": false,
+    "useTabs": false,
+    "jsxBracketSameLine": false
+  },
+  "dependencies": {
+    "@aws-amplify/core": "^1.1.2",
+    "amazon-cognito-identity-js": "^3.0.15",
+    "aws-amplify": "^1.1.40",
+    "aws-amplify-react-native": "^2.1.19",
+    "react": "16.9.0",
+    "react-native": "0.61.1",
+    "react-native-vector-icons": "^6.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-preset-airbnb": "^4.0.1",
+    "babel-preset-react-native": "^4.0.1",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-native": "^3.7.0",
+    "eslint-watch": "^6.0.1",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.18.2",
+    "prettier-eslint": "^9.0.0",
+    "react-test-renderer": "16.9.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
