@@ -1,0 +1,35 @@
+import React, { useState, useEffect } from 'react'
+import { Auth } from 'aws-amplify'
+import * as Keychain from 'react-native-keychain'
+import { AppContainer, Button } from '../../components'
+import { goHome } from '../../constants'
+
+const User = ({ navigation }) => {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  useEffect(() => {
+    const checkUser = async () => {
+      await Auth.currentAuthenticatedUser()
+      await Keychain.resetGenericPassword()
+    }
+    checkUser()
+  })
+
+  const _onPress = async () => {
+    setLoading(true)
+    try {
+      await Auth.signOut()
+      goHome(navigation)()
+    } catch (err) {
+      setError(err.message)
+    }
+  }
+
+  return (
+    <AppContainer title="User" navigation={navigation} message={error} loading={loading}>
+      <Button title="Sign Out" onPress={_onPress} />
+    </AppContainer>
+  )
+}
+
+export { User }
