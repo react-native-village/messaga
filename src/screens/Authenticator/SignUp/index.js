@@ -9,9 +9,9 @@ const Form = t.form.Form // eslint-disable-line
 
 const SignUp = ({ navigation }) => {
   const [userInfo, setUserInfo] = useState({
-    email: 'raoffonom@icloud.com',
-    password: 'qwerty123',
-    passwordConfirmation: 'qwerty123'
+    email: '',
+    password: '',
+    passwordConfirmation: ''
   })
 
   const [loading, setLoading] = useState(false)
