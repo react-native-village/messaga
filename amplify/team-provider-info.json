@@ -12,7 +12,9 @@
         },
         "categories": {
             "auth": {
-                "messagad91773cf": {}
+                "messagad91773cf": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"533974833777675\",\"client_secret\":\"009f92b7e5f8908ed686a6140b51c838\"},{\"ProviderName\":\"Google\",\"client_id\":\"557528583003-aji2u5vfke74fuhr8q06uv0cen0qsq4g.apps.googleusercontent.com\",\"client_secret\":\"uU3KGOHY6BZ7m1XKvBYzxTPW\"}]"
+                }
             }
         }
     }
