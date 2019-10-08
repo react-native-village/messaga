@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "messagad91773cf_identitypool_d91773cf",
+    "identityPoolName": "messaga517c081b_identitypool_517c081b",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "messagd91773cf",
-    "userPoolName": "messagad91773cf_userpool_d91773cf",
+    "resourceNameTruncated": "messag517c081b",
+    "userPoolName": "messaga517c081b_userpool_517c081b",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,9 +28,9 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "messagd91773cf_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "messag517c081b_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "messagad91773cf",
+    "resourceName": "messaga517c081b",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -44,17 +44,9 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
+    "useDefault": "default",
     "usernameAttributes": [
         "email"
     ],
-    "dependsOn": [],
-    "hostedUI": true,
-    "hostedUIDomainName": "messagaf1568a7a-f1568a7a",
-    "authProvidersUserPool": [
-        "Facebook",
-        "Google"
-    ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}},{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}"
+    "dependsOn": []
 }

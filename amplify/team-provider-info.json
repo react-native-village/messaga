@@ -1,20 +1,18 @@
 {
     "test": {
         "awscloudformation": {
-            "AuthRoleName": "messaga-test-20190926202751-authRole",
-            "UnauthRoleArn": "arn:aws:iam::123118798050:role/messaga-test-20190926202751-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::123118798050:role/messaga-test-20190926202751-authRole",
+            "AuthRoleName": "messaga-test-20191008104408-authRole",
+            "UnauthRoleArn": "arn:aws:iam::123118798050:role/messaga-test-20191008104408-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::123118798050:role/messaga-test-20191008104408-authRole",
             "Region": "eu-west-1",
-            "DeploymentBucketName": "messaga-test-20190926202751-deployment",
-            "UnauthRoleName": "messaga-test-20190926202751-unauthRole",
-            "StackName": "messaga-test-20190926202751",
-            "StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/messaga-test-20190926202751/f799c190-e082-11e9-b49e-069eaf5ad9a0"
+            "DeploymentBucketName": "messaga-test-20191008104408-deployment",
+            "UnauthRoleName": "messaga-test-20191008104408-unauthRole",
+            "StackName": "messaga-test-20191008104408",
+            "StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/messaga-test-20191008104408/69602010-e99f-11e9-a295-02162fdbb6ee"
         },
         "categories": {
             "auth": {
-                "messagad91773cf": {
-                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"533974833777675\",\"client_secret\":\"009f92b7e5f8908ed686a6140b51c838\"},{\"ProviderName\":\"Google\",\"client_id\":\"557528583003-aji2u5vfke74fuhr8q06uv0cen0qsq4g.apps.googleusercontent.com\",\"client_secret\":\"uU3KGOHY6BZ7m1XKvBYzxTPW\"}]"
-                }
+                "messaga517c081b": {}
             }
         }
     }
