@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     paddingTop: 200,
-    backgroundColor: '#212121'
+    backgroundColor: 'transparent'
   }
 })
 

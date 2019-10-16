@@ -5,11 +5,12 @@ import { BLUE } from '../../constants'
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    marginBottom: 10
+    margin: 10
   },
   h1: {
     color: BLUE,
-    fontSize: 13
+    fontFamily: '3270Narrow',
+    fontSize: 20
   }
 })
 

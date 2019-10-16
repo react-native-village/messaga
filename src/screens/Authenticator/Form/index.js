@@ -65,6 +65,7 @@ const formStyles = {
   controlLabel: {
     normal: {
       color: LABEL_COLOR,
+      fontFamily: '3270Narrow',
       fontSize: FONT_SIZE,
       marginLeft: 5,
       marginBottom: 7,
@@ -74,6 +75,7 @@ const formStyles = {
     error: {
       marginLeft: 5,
       marginRight: 5,
+      fontFamily: '3270Narrow',
       color: ERROR_COLOR,
       fontSize: FONT_SIZE,
       marginBottom: 7
@@ -82,6 +84,7 @@ const formStyles = {
   helpBlock: {
     normal: {
       color: HELP_COLOR,
+      fontFamily: '3270Narrow',
       fontSize: FONT_SIZE,
       marginBottom: 2
     },
@@ -90,11 +93,13 @@ const formStyles = {
       marginLeft: 5,
       marginRight: 5,
       color: HELP_COLOR,
+      fontFamily: '3270Narrow',
       fontSize: FONT_SIZE,
       marginBottom: 2
     }
   },
   errorBlock: {
+    fontFamily: '3270Narrow',
     fontSize: 12,
     marginBottom: 2,
     marginLeft: 5,
@@ -109,6 +114,7 @@ const formStyles = {
   textbox: {
     normal: {
       color: INPUT_COLOR,
+      fontFamily: '3270Narrow',
       fontSize: FONT_SIZE,
       height: 50,
       paddingVertical: Platform.OS === 'ios' ? 7 : 0,
@@ -122,6 +128,7 @@ const formStyles = {
     // the style applied when a validation error occours
     error: {
       color: INPUT_COLOR,
+      fontFamily: '3270Narrow',
       fontSize: FONT_SIZE,
       height: 50,
       paddingVertical: Platform.OS === 'ios' ? 7 : 0,
@@ -133,6 +140,7 @@ const formStyles = {
     },
     // the style applied when the textbox is not editable
     notEditable: {
+      fontFamily: '3270Narrow',
       fontSize: FONT_SIZE,
       height: 50,
       paddingVertical: Platform.OS === 'ios' ? 7 : 0,
@@ -212,6 +220,7 @@ const formStyles = {
   },
   pickerValue: {
     normal: {
+      fontFamily: '3270Narrow',
       fontSize: FONT_SIZE,
       paddingLeft: 7
     },
@@ -251,6 +260,7 @@ const formStyles = {
     }
   },
   buttonText: {
+    fontFamily: '3270Narrow',
     fontSize: 18,
     color: 'white',
     alignSelf: 'center'

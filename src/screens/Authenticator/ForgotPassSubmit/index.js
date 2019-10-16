@@ -47,8 +47,8 @@ const ForgotPassSubmit = ({ navigation }) => {
           value={userInfo}
           onChange={text => setUserInfo(text)}
         />
-        <Space height={10} />
-        <Button title="Sign In" onPress={_onPress} />
+        <Space height={50} />
+        <Button title="Confirm" onPress={_onPress} />
       </AppContainer>
     </>
   )

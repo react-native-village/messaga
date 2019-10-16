@@ -1,30 +1,22 @@
-import React, { memo } from 'react'
-import { StyleSheet, TouchableHighlight, Text } from 'react-native'
+import React, { memo, useState } from 'react'
+import { StyleSheet, TouchableWithoutFeedback, Text } from 'react-native'
 import { BLUE, PINK } from '../../constants'
 
 const styles = StyleSheet.create({
-  button: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: BLUE,
-    borderWidth: 2,
-    borderRadius: 5,
-    height: 50,
-    margin: 5
-  },
-  h1: {
-    color: BLUE,
-    fontWeight: 'bold',
-    fontSize: 15
+  img: {
+    alignSelf: 'center',
+    fontSize: 30,
+    fontFamily: 'IBM-Logo'
   }
 })
 
 const Button = memo(({ title, onPress }) => {
-  const { button, h1 } = styles
+  const [bg, setBg] = useState(BLUE)
+  const { img } = styles
   return (
-    <TouchableHighlight style={button} onPress={onPress} underlayColor={PINK}>
-      <Text style={h1}>{title}</Text>
-    </TouchableHighlight>
+    <TouchableWithoutFeedback onPress={onPress} onPressIn={() => setBg(PINK)} onPressOut={() => setBg(BLUE)}>
+      <Text style={[img, { color: bg }]}>{title}</Text>
+    </TouchableWithoutFeedback>
   )
 })
 

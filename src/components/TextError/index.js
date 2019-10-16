@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   },
   h1: {
     color: RED,
+    fontFamily: '3270Narrow',
     fontSize: 13
   }
 })

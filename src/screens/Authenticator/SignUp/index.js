@@ -9,9 +9,9 @@ const Form = t.form.Form // eslint-disable-line
 
 const SignUp = ({ navigation }) => {
   const [userInfo, setUserInfo] = useState({
-    email: '',
-    password: '',
-    passwordConfirmation: ''
+    email: 'raoffonom@icloud.com',
+    password: 'qwerty123',
+    passwordConfirmation: 'qwerty123'
   })
 
   const [loading, setLoading] = useState(false)
@@ -54,7 +54,7 @@ const SignUp = ({ navigation }) => {
   return (
     <>
       <AppContainer navigation={navigation} title="Sign Up" loading={loading}>
-        <Space height={80} />
+        <Space height={60} />
         <Form
           ref={registerForm}
           type={structSignUp}
@@ -64,8 +64,8 @@ const SignUp = ({ navigation }) => {
         />
         <Space height={10} />
         {error !== '' && <TextError title={error} />}
-        <Space height={10} />
-        <Button title="Sign In" onPress={_onPress} />
+        <Space height={50} />
+        <Button title="Sign Up" onPress={_onPress} />
       </AppContainer>
     </>
   )

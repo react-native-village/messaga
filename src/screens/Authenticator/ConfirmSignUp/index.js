@@ -68,7 +68,7 @@ const ConfirmSignUp = ({ navigation }) => {
         <Space height={10} />
         <TextLink title="Resend code?" onPress={_onResent} />
         {error !== 'Forgot Password?' && <TextError title={error} />}
-        <Space height={10} />
+        <Space height={50} />
         <Button title="Confirm" onPress={_onPress} />
       </AppContainer>
     </>
