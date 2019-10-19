@@ -10,7 +10,6 @@ const User = ({ navigation }) => {
   useEffect(() => {
     const checkUser = async () => {
       await Auth.currentAuthenticatedUser()
-      await Keychain.resetGenericPassword()
     }
     checkUser()
   })
@@ -19,6 +18,7 @@ const User = ({ navigation }) => {
     setLoading(true)
     try {
       await Auth.signOut()
+      await Keychain.resetGenericPassword()
       goHome(navigation)()
     } catch (err) {
       setError(err.message)
@@ -26,7 +26,7 @@ const User = ({ navigation }) => {
   }
 
   return (
-    <AppContainer title="User" navigation={navigation} message={error} loading={loading}>
+    <AppContainer message={error} loading={loading}>
       <Button title="Sign Out" onPress={_onPress} />
     </AppContainer>
   )

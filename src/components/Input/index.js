@@ -10,13 +10,14 @@ const styles = StyleSheet.create({
   }
 })
 
-const Input = memo(({ value, placeholder, secureTextEntry, onChange }) => {
+const Input = memo(({ value, placeholder, secureTextEntry, onChange, autoCapitalize = '' }) => {
   const { container } = styles
   return (
     <KeyboardAvoidingView behavior="padding">
       <TextInput
         placeholder={placeholder}
         value={value}
+        autoCapitalize={autoCapitalize}
         style={container}
         secureTextEntry={secureTextEntry}
         onChangeText={text => onChange(text)}

@@ -283,6 +283,7 @@ export const options = {
       stylesheet: formStyles,
       placeholder: 'Email',
       secureTextEntry: false,
+      autoCapitalize: 'none',
       error: 'Without an email address how are you going to reset your password when you forget it?',
       factory: FloatingLabel
     },
