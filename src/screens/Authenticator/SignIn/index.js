@@ -25,7 +25,7 @@ const SignIn = ({ navigation }) => {
       try {
         const { email, password } = userInfo
         const user = await Auth.signIn(email, password)
-        user && onScreen('USER', navigation)()
+        user && onScreen('AUTHORISED', navigation)()
         setLoading(false)
       } catch (err) {
         setLoading(false)

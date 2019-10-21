@@ -44,15 +44,16 @@ const styles = StyleSheet.create({
         paddingTop: 44
       }
     ),
-    fontSize: 30,
+    fontSize: 35,
     marginRight: 3
   }
 })
 
 const Header = memo(({ iconLeft, iconRight, colorLeft, colorRight, onPress, onPressRight }) => {
   const { container, iconLeftStyle, rightIconStyle } = styles
+
   return (
-    <View style={container}>
+    <View style={[container, { flexDirection: (iconLeft) ? 'row' : 'row-reverse' }]}>
       {iconLeft && (
         <TouchableOpacity onPress={onPress}>
           <Fontisto name={iconLeft} style={iconLeftStyle} color={colorLeft} />
@@ -60,7 +61,7 @@ const Header = memo(({ iconLeft, iconRight, colorLeft, colorRight, onPress, onPr
       )}
       {iconRight && (
         <TouchableOpacity onPress={onPressRight}>
-          <MaterialCommunityIcons name={iconRight} style={[rightIconStyle, { color: colorRight }]} />
+          { <MaterialCommunityIcons name={iconRight} style={[rightIconStyle, { color: colorRight }]} />}
         </TouchableOpacity>
       )}
     </View>
