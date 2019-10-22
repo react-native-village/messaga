@@ -1,6 +1,6 @@
-import React, { memo, useState } from 'react'
+import React, { memo } from 'react'
 import { StyleSheet, TouchableWithoutFeedback, Text, View } from 'react-native'
-import { BLUE, PINK, } from '../../constants'
+// import { BLUE, PINK, } from '../../constants'
 
 const styles = StyleSheet.create({
   card: {
@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(80, 227,194, 0.38)',
     // opacity: 0.38,
     padding: 25,
-    height: 246
+    height: 246,
+    marginBottom: 20
   },
   title: {
     fontFamily: '3270Narrow',
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
 
   },
   footerItem: {

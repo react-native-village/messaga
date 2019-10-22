@@ -3,15 +3,14 @@ import { createBottomTabNavigator } from 'react-navigation-tabs'
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import { Auth } from 'aws-amplify'
 
-import { User } from '../User'
-import { Jobs } from '../Jobs'
-import { PINK } from '../../../constants'
+import { User, Jobs } from './screens'
+import { PINK } from './constants'
 
 
 const TabNavigator = createBottomTabNavigator(
   {
-    User,
-    Jobs
+    USER: { screen: User },
+    JOBS: { screen: Jobs }
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -19,12 +18,12 @@ const TabNavigator = createBottomTabNavigator(
         const { routeName } = navigation.state
         const IconComponent = Fontisto
         let iconName
-        if (routeName === 'User') {
+        if (routeName === 'USER') {
           iconName = 'user-secret'
-        } else if (routeName === 'Jobs') {
+        } else if (routeName === 'JOBS') {
           iconName = 'home'
         }
-        return <IconComponent name={iconName} size={25} color={tintColor} />
+        return <IconComponent name={iconName} size={35} color={tintColor} />
       }
     }),
     tabBarOptions: {
@@ -32,6 +31,7 @@ const TabNavigator = createBottomTabNavigator(
       inactiveTintColor: '#390032',
       showLabel: false,
       style: {
+        height: 80,
         backgroundColor: '#0F0F0F',
         borderTopColor: '#0F0F0F'
 

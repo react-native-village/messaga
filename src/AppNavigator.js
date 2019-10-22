@@ -3,7 +3,8 @@ import { createStackNavigator } from 'react-navigation-stack'
 // import { createBottomTabNavigator } from 'react-navigation-tabs'
 
 
-import { ConfirmSignUp, Hello, SignIn, SignUp, Forgot, ForgotPassSubmit, Authorized } from './screens/Authenticator'
+import { ConfirmSignUp, Hello, SignIn, SignUp, Forgot, ForgotPassSubmit } from './screens'
+import { Authorized } from './UserNavigator'
 
 
 const AppNavigator = createStackNavigator(
@@ -21,6 +22,5 @@ const AppNavigator = createStackNavigator(
     headerMode: 'none'
   }
 )
-
 
 export default createAppContainer(AppNavigator)
