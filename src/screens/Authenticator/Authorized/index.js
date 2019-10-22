@@ -5,6 +5,7 @@ import { Auth } from 'aws-amplify'
 
 import { User } from '../User'
 import { Jobs } from '../Jobs'
+import { PINK } from '../../../constants'
 
 
 const TabNavigator = createBottomTabNavigator(
@@ -27,7 +28,7 @@ const TabNavigator = createBottomTabNavigator(
       }
     }),
     tabBarOptions: {
-      activeTintColor: '#64005A',
+      activeTintColor: PINK,
       inactiveTintColor: '#390032',
       showLabel: false,
       style: {

@@ -27,7 +27,7 @@ const ForgotPassSubmit = ({ navigation }) => {
       try {
         const { email, code, password } = userInfo
         await Auth.forgotPasswordSubmit(email, code, password)
-        onScreen('USER', navigation)()
+        onScreen('AUTHORISED', navigation)()
         setLoading(false)
       } catch (err) {
         setLoading(false)

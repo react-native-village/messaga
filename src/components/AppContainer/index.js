@@ -16,11 +16,12 @@ const styles = StyleSheet.create({
   }
 })
 
-const AppContainer = memo(({ navigation, children, message = '', title, loading = false }) => {
+const AppContainer = memo(({ navigation, children, costumHeader, message = '', title, loading = false }) => {
   const { container, sub } = styles
   return (
     <ImageBackground source={require('./bg.png')} style={container}>
       <StatusBarAlert visible={message !== ''} message={message} backgroundColor={RED} color="white" />
+      { costumHeader || null }
       {title && <Header title={title} onPress={goBack(navigation)} iconLeft="angle-dobule-left" colorLeft={BLUE} />}
       <>
         {loading ? (

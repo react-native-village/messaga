@@ -31,6 +31,7 @@
     "react-native-gesture-handler": "^1.4.1",
     "react-native-iphone-x-helper": "^1.2.1",
     "react-native-keychain": "^4.0.1",
+    "react-native-popup-navigation": "^0.2.0",
     "react-native-reanimated": "^1.3.0",
     "react-native-screens": "^1.0.0-alpha.23",
     "react-native-spinkit": "^1.5.0",

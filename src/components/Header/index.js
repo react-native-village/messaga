@@ -61,7 +61,7 @@ const Header = memo(({ iconLeft, iconRight, colorLeft, colorRight, onPress, onPr
       )}
       {iconRight && (
         <TouchableOpacity onPress={onPressRight}>
-          { <MaterialCommunityIcons name={iconRight} style={[rightIconStyle, { color: colorRight }]} />}
+          { <MaterialCommunityIcons color={colorRight} name={iconRight} style={[rightIconStyle]} />}
         </TouchableOpacity>
       )}
     </View>

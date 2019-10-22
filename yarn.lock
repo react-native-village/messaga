@@ -7098,6 +7098,11 @@ react-native-keychain@^4.0.1:
   resolved "https://registry.yarnpkg.com/react-native-keychain/-/react-native-keychain-4.0.1.tgz#c332f5d9aaf597255ae6ea4ca7d5c84a24684a1d"
   integrity sha512-AqQp4Hib9y5DP5es5umEAhxKG7L0bA8cHNFhvlqs6oUcbUoKtXmhLDo3wzvnCF+bm8DXpGhvkU6P0LkfO0AgPQ==
 
+react-native-popup-navigation@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-popup-navigation/-/react-native-popup-navigation-0.2.0.tgz#f5f122618469d8ce50c7c001c3d294e9bfbd298d"
+  integrity sha512-HUaL1bVh1nB83Az20rsY2vjYNilfo4Ol8nz0HKRqU1ylyDr9X4G90XSaLcdbN9GCYOiZohEp0xlNmOuu/HD3HA==
+
 react-native-reanimated@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.3.0.tgz#581cdb0bd1ff05e7304b116af712ded0c7665ede"

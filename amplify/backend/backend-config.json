@@ -1,9 +1,26 @@
 {
 	"auth": {
-		"messaga517c081b": {
+		"messaga6c171df6": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
+		}
+	},
+	"api": {
+		"messaga": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authmessaga6c171df6"
+						}
+					}
+				}
+			}
 		}
 	}
 }
