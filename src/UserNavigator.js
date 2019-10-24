@@ -1,15 +1,10 @@
-import React, { useEffect, useState, createContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createBottomTabNavigator } from 'react-navigation-tabs'
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import { Auth } from 'aws-amplify'
-
-
-
-
+import { UserContext, PINK } from './constants'
 import { User, Jobs } from './screens'
-import { PINK } from './constants'
 
-// const UserContext = React.createContext()
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -59,7 +54,7 @@ const Authorized = ({ navigation }) => {
     checkUser()
   }, [])
 
-  return (<TabNavigator navigation={navigation} />)
+  return (<UserContext.Provider value={user}><TabNavigator navigation={navigation} /></UserContext.Provider>)
 }
 Authorized.router = TabNavigator.router
 

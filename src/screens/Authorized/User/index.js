@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Auth } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
 import { AppContainer, Button } from '../../../components'
-import { goHome } from '../../../constants'
 
 const User = ({ navigation }) => {
   const [loading, setLoading] = useState(false)
@@ -13,7 +12,7 @@ const User = ({ navigation }) => {
     try {
       await Auth.signOut()
       await Keychain.resetGenericPassword()
-      goHome(navigation)()
+      navigation.navigate('HELLO')
     } catch (err) {
       setError(err.message)
     }

@@ -43,7 +43,7 @@ Amplify.configure({
 
 const App = () => (
   <>
-    <StatusBar barStyle="dark-content" />
+    <StatusBar translucent   backgroundColor="transparent"  barStyle="light-content" />
     <Localei18n />
     <AppNavigator />
   </>

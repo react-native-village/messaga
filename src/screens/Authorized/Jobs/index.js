@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Dimensions, TouchableOpacity, View, Text, StyleSheet } from 'react-native'
 import { createAppContainer } from 'react-navigation'
 import Amplify, { Auth, API, graphqlOperation } from 'aws-amplify'
@@ -9,6 +9,11 @@ import { createStackNavigator } from 'react-navigation-stack'
 // import Amplify, { API, graphqlOperation } from "aws-amplify";
 import { Header, CardJob, JobsContainer } from '../../../components'
 import { FlatList } from 'react-native'
+import { UserContext } from '../../../constants'
+import { AddJob } from '../AddJob'
+
+
+
 
 const { height } = Dimensions.get('window')
 
@@ -55,13 +60,13 @@ const styles = StyleSheet.create({
   }
 })
 
-const Home = (props) => {
-
+const Home = ({ navigation }) => {
+  const user = useContext(UserContext)
   const [jobs, setJobs] = useState([])
   const [nextToken, setToken] = useState('')
   const [error, SetError] = useState('')
   const [loading, setLoading] = useState(false)
-
+  console.log(user && user.attributes.email)
   useEffect(() => {
     async function fetchJobs() {
       try {
@@ -81,8 +86,12 @@ const Home = (props) => {
     }
     fetchJobs()
   }, [])
+  const addJob = () => {
+    navigation.navigate('AddJob')
+  }
+
   return (
-    <JobsContainer loading={loading} header={<Header iconRight="plus" colorRight="#2e7767" />}>
+    <JobsContainer on loading={loading} header={<Header iconRight="plus" colorRight="#2e7767" onPressRight={() => addJob()} />}>
       <FlatList
         style={{ flex: 1 }}
         data={jobs}
@@ -132,8 +141,8 @@ const JobsNav = createStackNavigator(
     Main: {
       screen: Home
     },
-    PopUp: {
-      screen: PopUp
+    AddJob: {
+      screen: AddJob
     }
   },
   {

@@ -13,7 +13,9 @@ import {
 
 const formValidation = {
   email: t.refinement(t.String, value => /@/.test(value)),
-  password: t.refinement(t.String, value => value.length >= 8)
+  password: t.refinement(t.String, value => value.length >= 8),
+  position: t.refinement(t.String, value => value.length >= 3 && value <= 30),
+  rate: t.Number
 }
 
 export const structSignIn = t.struct({
@@ -25,6 +27,12 @@ export const structSignUp = t.struct({
   email: formValidation.email,
   password: formValidation.password,
   passwordConfirmation: formValidation.password
+})
+
+export const structAddOrEdit = t.struct({
+  position: formValidation.position,
+  rate: formValidation.rate,
+  content: t.String
 })
 
 export const structForgot = t.struct({
@@ -307,6 +315,43 @@ export const options = {
       secureTextEntry: false,
       error: 'Confident in their actions?',
       factory: FloatingLabel
+    },
+    position: {
+      stylesheet: formStyles,
+      placeholder: 'Position',
+      secureTextEntry: false,
+      error: 'Confident in their actions?',
+      factory: FloatingLabel
+    },
+    rate: {
+      stylesheet: formStyles,
+      placeholder: 'Rate',
+      secureTextEntry: false,
+      error: 'Confident in their actions?',
+      factory: FloatingLabel
+    },
+    content: {
+      // stylesheet: formStyles,
+      multiline: true,
+      stylesheet: {
+        ...Form.stylesheet,
+        textbox: {
+            ...Form.stylesheet.textbox,
+            normal: {
+                ...Form.stylesheet.textbox.normal,
+                height: 350
+            },
+            error: {
+                ...Form.stylesheet.textbox.error,
+                height: 350
+            }
+        }
+     },
+      placeholder: 'content',
+      secureTextEntry: false,
+      error: 'Confident in their actions?',
+      factory: t.form.Textbox
     }
+
   }
 }
