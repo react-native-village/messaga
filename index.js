@@ -13,6 +13,6 @@ YellowBox.ignoreWarnings([
   'Sending `onAnimatedValueUpdate`'
 ])
 
-window.LOG_LEVEL = 'DEBUG'
+// window.LOG_LEVEL = 'DEBUG'
 
 AppRegistry.registerComponent(appName, () => App)

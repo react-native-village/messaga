@@ -8,7 +8,6 @@
     "lint": "esw src/**",
     "lint-watch": "esw -w --changed src/**"
   },
-  "precommit": "lint",
   "prettier": {
     "singleQuote": true,
     "printWidth": 120,

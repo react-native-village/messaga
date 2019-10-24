@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Dimensions, TouchableOpacity, View, Text, StyleSheet } from 'react-native'
 import { createAppContainer } from 'react-navigation'
+import Amplify, { Auth, API, graphqlOperation } from 'aws-amplify'
+
+import * as mutations from '../../../graphql/mutations'
+import { listJobs } from '../../../graphql/queries'
 import { createStackNavigator } from 'react-navigation-stack'
-import { Header, CardJob, AppContainer } from '../../../components'
+// import Amplify, { API, graphqlOperation } from "aws-amplify";
+import { Header, CardJob, JobsContainer } from '../../../components'
+import { FlatList } from 'react-native'
 
 const { height } = Dimensions.get('window')
-
 
 // import Fontisto from 'react-native-vector-icons/Fontisto'
 
@@ -23,7 +28,6 @@ const card = {
 //   salary: '2340$'
 // }
 
-
 // }
 
 const styles = StyleSheet.create({
@@ -34,8 +38,6 @@ const styles = StyleSheet.create({
     height: height - 50,
     justifyContent: 'center',
     paddingHorizontal: 20
-
-
   },
   btn: {
     padding: 20,
@@ -53,36 +55,75 @@ const styles = StyleSheet.create({
   }
 })
 
+const Home = (props) => {
 
-const Home = ({ navigation: nav }) => {
+  const [jobs, setJobs] = useState([])
+  const [nextToken, setToken] = useState('')
+  const [error, SetError] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    async function fetchJobs() {
+      try {
+        setLoading(true)
+        const {
+          data: {
+            listJobs: { items, nextToken: nextTok }
+          }
+        } = await API.graphql(graphqlOperation(listJobs, { limit: 3 }))
+        // console.log(items)
+        setJobs(items)
+        setToken(nextTok)
+        setLoading(false)
+      } catch (err) {
+        // console.log('error: ', err);
+      }
+    }
+    fetchJobs()
+  }, [])
   return (
-    <>
-
-      <AppContainer navigation={nav} costumHeader={<Header iconRight="plus" colorRight="#2e7767" />}>
-
-        <CardJob {...card} onPress={() => { nav.navigate('PopUp') }} />
-        <CardJob {...card} onPress={() => { nav.navigate('PopUp') }} />
-        <CardJob {...card} onPress={() => { nav.navigate('PopUp') }} />
-        <CardJob {...card} onPress={() => { nav.navigate('PopUp') }} />
-        <CardJob {...card} onPress={() => { nav.navigate('PopUp') }} />
-        <CardJob {...card} onPress={() => { nav.navigate('PopUp') }} />
-        <CardJob {...card} onPress={() => { nav.navigate('PopUp') }} />
-        <CardJob {...card} onPress={() => { nav.navigate('PopUp') }} />
-
-      </AppContainer>
-
-    </>
+    <JobsContainer loading={loading} header={<Header iconRight="plus" colorRight="#2e7767" />}>
+      <FlatList
+        style={{ flex: 1 }}
+        data={jobs}
+        renderItem={({ item: { title, content, owner: user, rate } }) => <CardJob title={title} content={content} user={user} rate={rate} />}
+        keyExtractor={item => item.id}
+      />
+      </JobsContainer> 
   )
 }
 const PopUp = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.sub}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.btn} ><Text>close</Text></TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={async () => {
+            const test123 = {
+              title: 'React Native Developer2',
+              content: 'dssdfsdfsdfsdsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfsdfsdfsdsdf',
+              rate: 2340
+            }
+            // const newPost = await graphqlOperation(mutations.createJob, {
+            //   input:  test123
+            // })
+            // console.log("next", newPost)
+            // const { data } = await API.graphql(graphqlOperation(listJobs));
+            const { data } = await API.graphql({
+              query: mutations.createJob,
+              variables: { input: test123 },
+              authMode: 'AMAZON_COGNITO_USER_POOLS'
+            })
+            console.log(data)
+          }}
+        >
+          <Text>close2</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.btn}>
+          <Text>close</Text>
+        </TouchableOpacity>
       </View>
-
     </View>
-
   )
 }
 
@@ -94,7 +135,6 @@ const JobsNav = createStackNavigator(
     PopUp: {
       screen: PopUp
     }
-
   },
   {
     mode: 'modal',
@@ -102,8 +142,6 @@ const JobsNav = createStackNavigator(
   }
 )
 
-
 const Jobs = createAppContainer(JobsNav)
-
 
 export { Jobs }

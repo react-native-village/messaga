@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState, createContext } from 'react'
 import { createBottomTabNavigator } from 'react-navigation-tabs'
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import { Auth } from 'aws-amplify'
 
+
+
+
 import { User, Jobs } from './screens'
 import { PINK } from './constants'
 
+// const UserContext = React.createContext()
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -13,6 +17,7 @@ const TabNavigator = createBottomTabNavigator(
     JOBS: { screen: Jobs }
   },
   {
+    initialRouteName: 'JOBS',
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ tintColor }) => {
         const { routeName } = navigation.state
@@ -41,12 +46,18 @@ const TabNavigator = createBottomTabNavigator(
 )
 
 const Authorized = ({ navigation }) => {
+  const [user, setUser] = useState(null)
   useEffect(() => {
     const checkUser = async () => {
-      await Auth.currentAuthenticatedUser()
+      try {
+        const userDetails = await Auth.currentAuthenticatedUser()
+        setUser(userDetails)
+      } catch (e) {
+        navigation.navigate('HELLO')
+      }
     }
     checkUser()
-  })
+  }, [])
 
   return (<TabNavigator navigation={navigation} />)
 }

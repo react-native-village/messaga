@@ -41,17 +41,18 @@ const styles = StyleSheet.create({
 
 })
 
-const CardJob = memo(({ title, content, user, salary, onPress }) => {
+const CardJob = memo(({ title, content, user, rate, onPress }) => {
 //   const [bg, setBg] = useState(BLUE)
 //   const { img } = styles
+  const userSlice = user.slice(0, 10)
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.content}>{content}</Text>
         <View style={styles.footer}>
-          <Text style={styles.footerItem}>{user}</Text>
-          <Text style={[styles.footerItem, { fontSize: 23, letterSpacing: 1.17 }]}>{salary}</Text>
+          <Text style={styles.footerItem}>{userSlice}</Text>
+          <Text style={[styles.footerItem, { fontSize: 23, letterSpacing: 1.17 }]}>{rate}$</Text>
         </View>
       </View>
     </TouchableWithoutFeedback>

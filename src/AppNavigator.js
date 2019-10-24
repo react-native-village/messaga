@@ -18,7 +18,7 @@ const AppNavigator = createStackNavigator(
     FORGOT_PASSWORD_SUBMIT: { screen: ForgotPassSubmit }
   },
   {
-    initialRouteName: 'AUTHORISED',
+    initialRouteName: 'HELLO',
     headerMode: 'none'
   }
 )
