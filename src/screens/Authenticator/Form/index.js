@@ -336,17 +336,17 @@ export const options = {
       stylesheet: {
         ...Form.stylesheet,
         textbox: {
-            ...Form.stylesheet.textbox,
-            normal: {
-                ...Form.stylesheet.textbox.normal,
-                height: 350
-            },
-            error: {
-                ...Form.stylesheet.textbox.error,
-                height: 350
-            }
+          ...Form.stylesheet.textbox,
+          normal: {
+            ...Form.stylesheet.textbox.normal,
+            height: 350
+          },
+          error: {
+            ...Form.stylesheet.textbox.error,
+            height: 350
+          }
         }
-     },
+      },
       placeholder: 'content',
       secureTextEntry: false,
       error: 'Confident in their actions?',
