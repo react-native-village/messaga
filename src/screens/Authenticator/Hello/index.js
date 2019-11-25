@@ -1,25 +1,35 @@
 import React, { useEffect, useState } from 'react'
+import { Auth } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
 import { AppContainer, Button, Space, TextLink } from '../../../components'
 import { onScreen } from '../../../constants'
 
 const Hello = ({ navigation }) => {
-  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const init = false
   useEffect(() => {
+    setLoading(true)
     const key = async () => {
       try {
-        const credentials = await Keychain.getGenericPassword()
+        const credentials = await Keychain.getInternetCredentials('auth')
+
         if (credentials) {
-          onScreen('USER', navigation)()
+          const { username, password } = credentials
+          const user = await Auth.signIn(username, password)
+          setLoading(false)
+          user && onScreen('JOBS', navigation)()
+        } else {
+          setLoading(false)
         }
       } catch (err) {
-        setError(err)
+        console.log('error', err) // eslint-disable-line
+        setLoading(false)
       }
     }
     key()
-  })
+  }, [init])
   return (
-    <AppContainer message={error}>
+    <AppContainer loading={loading}>
       <Space height={200} />
       <Button title="Sign In" onPress={onScreen('SIGN_IN', navigation)} />
       <TextLink title="or" />

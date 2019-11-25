@@ -17,10 +17,10 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* messagaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* messagaTests.m */; };
-		33D18D80703B435D84DE389D /* 3270Narrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8250423DF81047BABAD22EAF /* 3270Narrow.ttf */; };
 		5953753C560527595962FD27 /* libPods-messagaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C4E90CF7F39947268C2703E /* libPods-messagaTests.a */; };
 		5D98DAA66612BDA5B5AE06FA /* libPods-messaga-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B697CA33C774FA8ED044B9E /* libPods-messaga-tvOSTests.a */; };
-		410A47B3E7724F4B95148E1A /* IBM-Logo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6438E95E3DD4D8AA089C8A4 /* IBM-Logo.ttf */; };
+		34D03B217EA44DDA90BD988A /* 3270Narrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A49C6EE0DB944BC977BDDBA /* 3270Narrow.ttf */; };
+		E85AA08A955144F1B7E074E9 /* IBM-Logo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 065D8B590D4847CC87DD0934 /* IBM-Logo.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,11 +81,13 @@
 		BF29310CCD404CA884DBE3F1 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		BFD8EB65BDCD1208464FAF37 /* libPods-messaga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-messaga.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17F8FA615844D71BB83091D /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		E6438E95E3DD4D8AA089C8A4 /* IBM-Logo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBM-Logo.ttf"; path = "../src/assets/fonts/IBM-Logo.ttf"; sourceTree = "<group>"; };
 		E866E2F52D964D4B734D3B8A /* libPods-messaga-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-messaga-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F02ACC932C1E5C5E425DD547 /* Pods-messagaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-messagaTests.release.xcconfig"; path = "Target Support Files/Pods-messagaTests/Pods-messagaTests.release.xcconfig"; sourceTree = "<group>"; };
-		E6438E95E3DD4D8AA089C8A4 /* IBM-Logo.ttf */ = {isa = PBXFileReference; name = "IBM-Logo.ttf"; path = "../src/assets/fonts/IBM-Logo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5A49C6EE0DB944BC977BDDBA /* 3270Narrow.ttf */ = {isa = PBXFileReference; name = "3270Narrow.ttf"; path = "../assets/fonts/3270Narrow.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		065D8B590D4847CC87DD0934 /* IBM-Logo.ttf */ = {isa = PBXFileReference; name = "IBM-Logo.ttf"; path = "../assets/fonts/IBM-Logo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,8 @@
 				29A0AEA3A6EC4888A23AAE6A /* SimpleLineIcons.ttf */,
 				8372300754024742B1FE6295 /* Zocial.ttf */,
 				E6438E95E3DD4D8AA089C8A4 /* IBM-Logo.ttf */,
+				5A49C6EE0DB944BC977BDDBA /* 3270Narrow.ttf */,
+				065D8B590D4847CC87DD0934 /* IBM-Logo.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -388,8 +392,8 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				33D18D80703B435D84DE389D /* 3270Narrow.ttf in Resources */,
-				410A47B3E7724F4B95148E1A /* IBM-Logo.ttf in Resources */,
+				34D03B217EA44DDA90BD988A /* 3270Narrow.ttf in Resources */,
+				E85AA08A955144F1B7E074E9 /* IBM-Logo.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,12 @@ const formValidation = {
   password: t.refinement(t.String, value => value.length >= 8)
 }
 
+export const structJob = t.struct({
+  position: t.refinement(t.String, value => value.length >= 3 && value <= 30),
+  rate: t.Number,
+  description: t.String
+})
+
 export const structSignIn = t.struct({
   email: formValidation.email,
   password: formValidation.password
@@ -121,7 +127,7 @@ const formStyles = {
       paddingHorizontal: 12,
       borderRadius: 4,
       borderColor: BORDER_COLOR,
-      borderWidth: 1,
+      borderWidth: 0.5,
       marginLeft: 5,
       marginRight: 5
     },
@@ -135,7 +141,7 @@ const formStyles = {
       paddingHorizontal: 12,
       borderRadius: 4,
       borderColor: ERROR_COLOR,
-      borderWidth: 1,
+      borderWidth: 0.5,
       marginBottom: 5
     },
     // the style applied when the textbox is not editable
@@ -147,7 +153,7 @@ const formStyles = {
       paddingHorizontal: 7,
       borderRadius: 4,
       borderColor: BORDER_COLOR,
-      borderWidth: 1,
+      borderWidth: 0.5,
       marginBottom: 5,
       color: DISABLED_COLOR,
       backgroundColor: DISABLED_BACKGROUND_COLOR
@@ -167,13 +173,13 @@ const formStyles = {
       marginBottom: 4,
       borderRadius: 4,
       borderColor: BORDER_COLOR,
-      borderWidth: 1
+      borderWidth: 0.5
     },
     error: {
       marginBottom: 4,
       borderRadius: 4,
       borderColor: ERROR_COLOR,
-      borderWidth: 1
+      borderWidth: 0.5
     },
     open: {
       // Alter styles when select container is open
@@ -269,7 +275,7 @@ const formStyles = {
     height: 36,
     backgroundColor: INPUT_COLOR,
     borderColor: INPUT_COLOR,
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderRadius: 8,
     marginBottom: 10,
     alignSelf: 'stretch',
@@ -283,6 +289,7 @@ export const options = {
       stylesheet: formStyles,
       placeholder: 'Email',
       secureTextEntry: false,
+      keyboardType: 'email-address',
       autoCapitalize: 'none',
       error: 'Without an email address how are you going to reset your password when you forget it?',
       factory: FloatingLabel
@@ -305,7 +312,76 @@ export const options = {
       stylesheet: formStyles,
       placeholder: 'Verification code',
       secureTextEntry: false,
+      keyboardType: 'numeric',
       error: 'Confident in their actions?',
+      factory: FloatingLabel
+    },
+    position: {
+      stylesheet: formStyles,
+      placeholder: 'Position',
+      secureTextEntry: false,
+      autoCapitalize: 'none',
+      error: 'Please enter position name',
+      factory: FloatingLabel
+    },
+    rate: {
+      stylesheet: formStyles,
+      placeholder: 'Rate',
+      secureTextEntry: false,
+      autoCapitalize: 'none',
+      keyboardType: 'numeric',
+      error: 'Please enter rate',
+      factory: FloatingLabel
+    },
+    description: {
+      stylesheet: {
+        ...Form.stylesheet,
+        controlLabel: {
+          normal: {
+            color: LABEL_COLOR,
+            fontFamily: '3270Narrow',
+            fontSize: FONT_SIZE,
+            marginLeft: 5,
+            marginBottom: 7,
+            justifyContent: 'center',
+            fontWeight: FONT_WEIGHT
+          },
+          error: {
+            color: ERROR_COLOR,
+            fontFamily: '3270Narrow',
+            fontSize: FONT_SIZE,
+            marginLeft: 5,
+            marginRight: 7,
+            fontWeight: FONT_WEIGHT
+          }
+        },
+        textbox: {
+          normal: {
+            height: 300,
+            color: INPUT_COLOR,
+            fontFamily: '3270Narrow',
+            fontSize: FONT_SIZE,
+            paddingHorizontal: 12,
+            borderRadius: 4,
+            textAlignVertical: 'top',
+            borderColor: BORDER_COLOR,
+            borderWidth: 0.5,
+            paddingTop: 13,
+            paddingBottom: 0,
+            marginLeft: 5,
+            marginRight: 5
+          },
+          error: {
+            ...Form.stylesheet.textbox.error,
+            height: 150
+          }
+        }
+      },
+      placeholder: 'Description',
+      secureTextEntry: false,
+      multiline: true,
+      autoCapitalize: 'none',
+      error: 'Please enter rate',
       factory: FloatingLabel
     }
   }

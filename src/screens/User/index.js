@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Auth } from 'aws-amplify'
 import * as Keychain from 'react-native-keychain'
-import { AppContainer, Button } from '../../../components'
-import { goHome } from '../../../constants'
+import { AppContainer, Button } from '../../components'
+import { goHome } from '../../constants'
 
 const User = ({ navigation }) => {
   const [loading, setLoading] = useState(false)
@@ -18,7 +18,7 @@ const User = ({ navigation }) => {
     setLoading(true)
     try {
       await Auth.signOut()
-      await Keychain.resetGenericPassword()
+      await Keychain.resetInternetCredentials('auth')
       goHome(navigation)()
     } catch (err) {
       setError(err.message)

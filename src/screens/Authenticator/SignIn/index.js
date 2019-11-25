@@ -1,16 +1,17 @@
 import React, { useState, useRef } from 'react'
 import { Auth } from 'aws-amplify'
+import * as Keychain from 'react-native-keychain'
 import t from 'tcomb-form-native'
 import { AppContainer, Button, Space, TextLink, TextError } from '../../../components'
 import { structSignIn, options } from '../Form'
-import { onScreen } from '../../../constants'
+import { onScreen, goBack } from '../../../constants'
 
 const Form = t.form.Form // eslint-disable-line
 
 const SignIn = ({ navigation }) => {
   const [userInfo, setUserInfo] = useState({
-    email: '',
-    password: ''
+    email: 'raoffonom@icloud.com',
+    password: 'qwerty123'
   })
 
   const [loading, setLoading] = useState(false)
@@ -25,7 +26,8 @@ const SignIn = ({ navigation }) => {
       try {
         const { email, password } = userInfo
         const user = await Auth.signIn(email, password)
-        user && onScreen('USER', navigation)()
+        await Keychain.setInternetCredentials('auth', email, password)
+        user && onScreen('JOBS', navigation)()
         setLoading(false)
       } catch (err) {
         setLoading(false)
@@ -48,7 +50,7 @@ const SignIn = ({ navigation }) => {
 
   return (
     <>
-      <AppContainer navigation={navigation} title="Sign In" loading={loading}>
+      <AppContainer onPress={goBack(navigation)} title="Sign In" loading={loading}>
         <Space height={70} />
         <Form
           ref={registerForm}

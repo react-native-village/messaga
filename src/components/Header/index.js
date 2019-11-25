@@ -1,6 +1,5 @@
 import React, { memo } from 'react'
 import { TouchableOpacity, View, StyleSheet } from 'react-native'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
 import Fontisto from 'react-native-vector-icons/Fontisto'
 
@@ -8,44 +7,42 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    elevation: 2,
-    paddingHorizontal: 20,
+    paddingHorizontal: 6,
     backgroundColor: 'transparent',
-    position: 'relative',
+    opacity: 0.8,
     ...ifIphoneX(
       {
         height: 122
       },
       {
-        height: 90
+        height: 100
       }
     )
   },
   iconLeftStyle: {
+    paddingLeft: 5,
+    opacity: 0.8,
+    fontSize: 35,
     ...ifIphoneX(
       {
-        paddingTop: 75
+        paddingTop: 65
       },
       {
         paddingTop: 40
       }
-    ),
-    fontSize: 35
+    )
   },
   rightIconStyle: {
+    fontSize: 35,
+    marginRight: 3,
     ...ifIphoneX(
       {
-        paddingTop: 75
+        paddingTop: 65
       },
       {
         paddingTop: 44
       }
-    ),
-    fontSize: 30,
-    marginRight: 3
+    )
   }
 })
 
@@ -58,9 +55,10 @@ const Header = memo(({ iconLeft, iconRight, colorLeft, colorRight, onPress, onPr
           <Fontisto name={iconLeft} style={iconLeftStyle} color={colorLeft} />
         </TouchableOpacity>
       )}
+
       {iconRight && (
         <TouchableOpacity onPress={onPressRight}>
-          <MaterialCommunityIcons name={iconRight} style={[rightIconStyle, { color: colorRight }]} />
+          <Fontisto name={iconRight} style={rightIconStyle} color={colorRight} />
         </TouchableOpacity>
       )}
     </View>

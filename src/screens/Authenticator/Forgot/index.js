@@ -3,7 +3,7 @@ import { Auth } from 'aws-amplify'
 import t from 'tcomb-form-native'
 import { AppContainer, Button, Space } from '../../../components'
 import { structForgot, options } from '../Form'
-import { onScreen } from '../../../constants'
+import { onScreen, goBack } from '../../../constants'
 
 // Fixme
 const Form = t.form.Form // eslint-disable-line
@@ -31,7 +31,7 @@ const Forgot = ({ navigation }) => {
 
   return (
     <>
-      <AppContainer title="Forgot" navigation={navigation} message={error} loading={loading}>
+      <AppContainer title="Forgot" onPress={goBack(navigation)} message={error} loading={loading}>
         <Space height={130} />
         <Form
           ref={registerForm}

@@ -23,7 +23,7 @@
     "spaced-comment": 0,
     "comma-dangle": ["error", "never"],
     "react/prop-types": 0,
-    "function-paren-newline": ["error", "multiline"],
+    "function-paren-newline": 0,
     "no-extra-boolean-cast": 0,
     "quote-props": 0,
     "object-curly-spacing": ["error", "always"],

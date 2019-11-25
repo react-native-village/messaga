@@ -1,6 +1,7 @@
 import React from 'react'
 import { StatusBar } from 'react-native'
 import Amplify from '@aws-amplify/core'
+import PubSub from '@aws-amplify/pubsub'
 import * as Keychain from 'react-native-keychain'
 import AppNavigator from './AppNavigator'
 import { Localei18n } from './components'
@@ -40,10 +41,11 @@ Amplify.configure({
   },
   storage: MyStorage
 })
+PubSub.configure(awsconfig)
 
 const App = () => (
   <>
-    <StatusBar barStyle="dark-content" />
+    <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
     <Localei18n />
     <AppNavigator />
   </>

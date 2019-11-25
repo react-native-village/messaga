@@ -3,7 +3,7 @@ import { Auth } from 'aws-amplify'
 import t from 'tcomb-form-native'
 import { AppContainer, Button, Space, TextLink, TextError } from '../../../components'
 import { structConfirmSignUp, options } from '../Form'
-import { onScreen } from '../../../constants'
+import { onScreen, goBack } from '../../../constants'
 
 const Form = t.form.Form // eslint-disable-line
 
@@ -26,7 +26,7 @@ const ConfirmSignUp = ({ navigation }) => {
         const { email, password } = navigation.state.params
         await Auth.confirmSignUp(email, code, { forceAliasCreation: true })
         const user = await Auth.signIn(email, password)
-        user && onScreen('USER', navigation)()
+        user && onScreen('JOBS', navigation)()
         setLoading(false)
       } catch (err) {
         setLoading(false)
@@ -56,7 +56,7 @@ const ConfirmSignUp = ({ navigation }) => {
 
   return (
     <>
-      <AppContainer title="Confirmation" navigation={navigation} message={error} loading={loading}>
+      <AppContainer title="Confirmation" onPress={goBack(navigation)} message={error} loading={loading}>
         <Space height={20} />
         <Form
           ref={registerForm}

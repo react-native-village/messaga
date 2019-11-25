@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
   }
 })
 
-const Button = memo(({ title, onPress }) => {
-  const [bg, setBg] = useState(BLUE)
+const Button = memo(({ color = BLUE, title, onPress }) => {
+  const [bg, setBg] = useState(color)
   const { img } = styles
   return (
     <TouchableWithoutFeedback onPress={onPress} onPressIn={() => setBg(PINK)} onPressOut={() => setBg(BLUE)}>

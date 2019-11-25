@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react'
 import { Auth } from 'aws-amplify'
+import * as Keychain from 'react-native-keychain'
 import t from 'tcomb-form-native'
 import { AppContainer, Space, Button, TextError } from '../../../components'
 import { structSignUp, options } from '../Form'
-import { onScreen } from '../../../constants'
+import { onScreen, goBack } from '../../../constants'
 
 const Form = t.form.Form // eslint-disable-line
 
@@ -29,6 +30,7 @@ const SignUp = ({ navigation }) => {
         setError('')
         try {
           const user = await Auth.signUp(email, password)
+          await Keychain.setInternetCredentials('auth', email, password)
           user && onScreen('CONFIRM_SIGN_UP', navigation, { email, password })()
           setLoading(false)
         } catch (err) {
@@ -53,7 +55,7 @@ const SignUp = ({ navigation }) => {
 
   return (
     <>
-      <AppContainer navigation={navigation} title="Sign Up" loading={loading}>
+      <AppContainer onPress={goBack(navigation)} title="Sign Up" loading={loading}>
         <Space height={60} />
         <Form
           ref={registerForm}
