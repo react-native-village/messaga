@@ -9,5 +9,5 @@ type Job
   position: String!
   rate: Int!
   description: String!
-  owner: String
+  owner: String!
 }
