@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "messaga517c081b_identitypool_517c081b",
+    "identityPoolName": "messaga9845d831_identitypool_9845d831",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "messag517c081b",
-    "userPoolName": "messaga517c081b_userpool_517c081b",
+    "resourceNameTruncated": "messag9845d831",
+    "userPoolName": "messaga9845d831_userpool_9845d831",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,9 +28,9 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "messag517c081b_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "messag9845d831_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "messaga517c081b",
+    "resourceName": "messaga9845d831",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -48,5 +48,6 @@
     "usernameAttributes": [
         "email"
     ],
+    "userPoolGroupList": [],
     "dependsOn": []
 }

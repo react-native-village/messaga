@@ -1,6 +1,6 @@
 {
 	"auth": {
-		"messaga517c081b": {
+		"messaga9845d831": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []

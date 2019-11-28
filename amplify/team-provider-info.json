@@ -1,18 +1,18 @@
 {
-    "test": {
+    "dev": {
         "awscloudformation": {
-            "AuthRoleName": "messaga-test-20191008104408-authRole",
-            "UnauthRoleArn": "arn:aws:iam::123118798050:role/messaga-test-20191008104408-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::123118798050:role/messaga-test-20191008104408-authRole",
+            "AuthRoleName": "amplify-messaga-dev-180028-authRole",
+            "UnauthRoleArn": "arn:aws:iam::123118798050:role/amplify-messaga-dev-180028-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::123118798050:role/amplify-messaga-dev-180028-authRole",
             "Region": "eu-west-1",
-            "DeploymentBucketName": "messaga-test-20191008104408-deployment",
-            "UnauthRoleName": "messaga-test-20191008104408-unauthRole",
-            "StackName": "messaga-test-20191008104408",
-            "StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/messaga-test-20191008104408/69602010-e99f-11e9-a295-02162fdbb6ee"
+            "DeploymentBucketName": "amplify-messaga-dev-180028-deployment",
+            "UnauthRoleName": "amplify-messaga-dev-180028-unauthRole",
+            "StackName": "amplify-messaga-dev-180028",
+            "StackId": "arn:aws:cloudformation:eu-west-1:123118798050:stack/amplify-messaga-dev-180028/d12c78b0-11ef-11ea-ae4e-02f0c9b42810"
         },
         "categories": {
             "auth": {
-                "messaga517c081b": {}
+                "messaga9845d831": {}
             }
         }
     }
