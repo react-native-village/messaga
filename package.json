@@ -32,7 +32,7 @@
     "graphql": "^14.5.8",
     "lodash": "^4.17.15",
     "react": "16.9.0",
-    "react-native": "0.61.1",
+    "react-native": "0.62.3",
     "react-native-dropdownalert": "^4.2.0",
     "react-native-floating-label": "^0.2.3",
     "react-native-gesture-handler": "^1.4.1",
